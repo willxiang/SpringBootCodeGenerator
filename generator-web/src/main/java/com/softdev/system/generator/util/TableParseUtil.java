@@ -159,7 +159,7 @@ public class TableParseUtil {
                 // 2019-4-29 zhengkai 优化对普通和特殊storage关键字的判断（感谢@AhHeadFloating的反馈 ）
                 // 2020-10-20 zhengkai 优化对fulltext/index关键字的处理（感谢@WEGFan的反馈）
                 boolean specialFlag = (!columnLine.contains("key ") && !columnLine.contains("constraint")
-//                        && !columnLine.contains("using")
+                        && !columnLine.contains(" using ")
                         && !columnLine.contains("unique ")
                         && !(columnLine.contains("primary ") && columnLine.indexOf("storage") + 3 > columnLine.indexOf("("))
                         && !columnLine.contains("fulltext ") && !columnLine.contains("index ")
